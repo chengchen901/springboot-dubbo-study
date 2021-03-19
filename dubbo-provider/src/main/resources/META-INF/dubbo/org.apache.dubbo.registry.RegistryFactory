@@ -1,0 +1,1 @@
+customRegistryFactory=com.study.dubbo.registry.CustomRegistryFactory

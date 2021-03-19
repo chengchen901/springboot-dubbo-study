@@ -1,0 +1,16 @@
+dubbo:
+  application:
+    name: http-provider
+  protocol:
+    port: 30880
+    name: http
+    id: http
+    server: tomcat
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.study.dubbo.protocol.http
+
+logging:
+  level:
+    com.study: debug

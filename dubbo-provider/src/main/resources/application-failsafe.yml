@@ -1,0 +1,14 @@
+dubbo:
+  application:
+    name: failsafe-provider
+  protocol:
+    port: 30880
+    name: dubbo
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.study.dubbo.failover.failsafe
+
+logging:
+  level:
+    com.study: debug

@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: thrift-provider
+  protocol:
+    port: 30880
+    name: native-thrift
+    id: native-thrift
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.study.dubbo.protocol.thrift
+
+logging:
+  level:
+    com.study: debug

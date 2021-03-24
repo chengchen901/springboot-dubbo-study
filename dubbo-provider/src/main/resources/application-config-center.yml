@@ -15,8 +15,6 @@ dubbo:
   config-center:
     address: zookeeper://127.0.0.1:2181
     include-spring-env: true
-  consumer:
-    retries:
 logging:
   level:
     com.study: debug

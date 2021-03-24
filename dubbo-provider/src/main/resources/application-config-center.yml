@@ -1,16 +1,26 @@
 dubbo:
   application:
-    name: simple-provider
+    name: hash-provider
+    qos-port: 33333
   protocol:
     port: 30880
     name: dubbo
   registry:
     address: zookeeper://127.0.0.1:2181
+  # 注意元信息到zk，这样就可以在dubboAdmin服务测试中测试接口
+  metadata-report:
+    address: zookeeper://127.0.0.1:2181
   scan:
-    base-packages: com.study.dubbo.protocol.simple
+    base-packages: com.study.dubbo.configcenter
   config-center:
     address: zookeeper://127.0.0.1:2181
-
+    include-spring-env: true
+  consumer:
+    retries:
 logging:
   level:
     com.study: debug
+
+server:
+  port: 8082
+

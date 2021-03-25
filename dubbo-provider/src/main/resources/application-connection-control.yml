@@ -1,0 +1,17 @@
+dubbo:
+  application:
+    name: connection-control-provider
+  protocol:
+    port: 30882
+    name: dubbo
+#     限制服务器端接受的连接不超过10个
+    accepts: 10
+
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.study.dubbo.connectioncontrol
+
+logging:
+  level:
+    com.study: debug

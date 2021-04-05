@@ -28,7 +28,7 @@ public class ApiProviderConfiguration {
         application.setParameters(appParameters);
 
         // 连接注册中心配置。 请学习RegistryConfig的API
-        RegistryConfig registry = new RegistryConfig("224.5.6.7:1234", "multicast");
+        RegistryConfig registry = new RegistryConfig("127.0.0.1:2181", "zookeeper");
         //registry.setDynamic(true);  // 动态注册，服务出现问题自动处理
 
         // 服务提供者协议配置

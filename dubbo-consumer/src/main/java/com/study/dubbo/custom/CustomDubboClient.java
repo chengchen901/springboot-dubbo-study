@@ -21,7 +21,7 @@ public class CustomDubboClient {
     public static void main(String[] args) throws Exception {
         // 1、 需要知道 有哪些接口可以被调用，通过zookeeper客户端去查询里面的信息
         ZkClient client = new ZkClient("127.0.0.1:2181");
-        List<String> providers = client.getChildren("/dubbo/com.study.dubbo.facade.OrderService/providers");
+        List<String> providers = client.getChildren("/META-INF/dubbo/com.study.dubbo.facade.OrderService/providers");
 
         // 2、 拿到了所有的服务提供者信息(ip+port)， 就可做 客户端负载均衡（策略：随机、轮询、或者固定访问第一台）
         int randomNum = new Random().nextInt(providers.size());

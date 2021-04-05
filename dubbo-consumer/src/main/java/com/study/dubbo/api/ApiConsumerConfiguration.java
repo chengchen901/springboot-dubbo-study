@@ -30,10 +30,10 @@ public class ApiConsumerConfiguration {
         application.setParameters(appParameters);
 
         // 连接注册中心配置
-        RegistryConfig registry = new RegistryConfig("224.5.6.7:1234", "multicast");
+        RegistryConfig registry = new RegistryConfig("127.0.0.1:2181", "zookeeper");
         Map<String, String> parameters = new HashMap<String, String>();
-        parameters.put("unicast", "true");
-        //registry.setParameters(parameters);
+        parameters.put("hystrixCoreSize", "10");
+//        registry.setParameters(parameters);
 
         // 注意：ReferenceConfig为重对象，内部封装了与注册中心的连接，以及与服务提供方的连接
         // 引用远程服务
@@ -44,6 +44,7 @@ public class ApiConsumerConfiguration {
         reference.setInterface(OrderService.class);
         reference.setTimeout(2000);
         reference.setVersion("1.0.0");
+        reference.setParameters(parameters);
 
         ReferenceConfigCache cache = ReferenceConfigCache.getCache();
 
